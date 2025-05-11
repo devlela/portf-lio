@@ -4,29 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfólio de Wesley Cavalcante Santos, desenvolvedor front-end e estudante de Análise e Desenvolvimento de Sistemas." />
+  <meta name="author" content="Wesley Cavalcante Santos" />
+  <meta name="keywords" content="portfólio, desenvolvedor front-end, Wesley Cavalcante Santos, projetos" />
   <title>Lela | Portfólio</title>
-  <link rel="icon" href="caminho-do-favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: #0f0f0f; color: #f0f0f0; line-height: 1.6; }
-    header { padding: 2rem; text-align: center; background: #1f1f1f; }
-    header h1 { font-size: 2.5rem; color: #8a2be2; }
-    nav a { margin: 0 1rem; color: #f0f0f0; text-decoration: none; font-weight: 600; }
-    nav a:hover { color: #8a2be2; }
-    section { padding: 3rem 2rem; max-width: 900px; margin: auto; }
-    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .card { background: #1f1f1f; border-radius: 12px; overflow: hidden; box-shadow: 0 0 10px #000; }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-content { padding: 1rem; }
-    .card-content h3 { color: #8a2be2; margin-bottom: 0.5rem; }
-    footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #ccc; }
-    .contact a { display: inline-block; margin: 0.5rem; color: #8a2be2; text-decoration: none; }
-    .contact a:hover { text-decoration: underline; }
-    @media(max-width: 768px) {
-      .projects { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -40,19 +23,102 @@
   </header>  
   <section id="sobre">
     <h2>Sobre mim</h2>
+    <img src="minha-foto.jpg" alt="Foto de Wesley Cavalcante Santos" class="minha-foto" />
     <p>Olá! Sou Wesley Cavalcante Santos, conhecido como Lela. Estudo Análise e Desenvolvimento de Sistemas na UNINOVE (conclusão em 2026). Sou apaixonado por tecnologia e programação, e meu portfólio reflete projetos relevantes para o mercado.</p>
   </section>  
   <section id="projetos">
     <h2>Projetos</h2>
     <div class="projects">
+      <!-- Projeto 1 -->
       <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Sportfy" alt="Sportfy - Clone do Spotify" />
+        <img src="https://via.placeholder.com/400x180?text=To-do+List+com+Flask" alt="Imagem do projeto To-do List com Flask" />
         <div class="card-content">
-          <h3>Sportfy</h3>
-          <p>Um clone responsivo do Spotify criado com HTML, CSS e JavaScript. Interface moderna, reprodução de playlists e integração com API fictícia. Ideal para praticar front-end e usabilidade.</p>
+          <h3>To-do List com Flask</h3>
+          <p>Aplicação para gerenciar tarefas usando Flask.</p>
+          <a href="https://github.com/devlela/todo-list-flask" target="_blank" class="btn">Ver no GitHub</a>
         </div>
       </div>
-      <!-- Novos projetos podem ser adicionados aqui -->
+      <!-- Projeto 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Dashboard+com+Dash" alt="Imagem do projeto Dashboard com Dash" />
+        <div class="card-content">
+          <h3>Dashboard com Dash</h3>
+          <p>Dashboard interativo para análise de dados com Dash e Plotly.</p>
+          <a href="https://github.com/devlela/dashboard-analise-dados" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Site+de+Agendamentos" alt="Imagem do projeto Site de Agendamentos" />
+        <div class="card-content">
+          <h3>Site de Agendamentos</h3>
+          <p>Aplicação para gerenciar agendamentos usando Flask.</p>
+          <a href="https://github.com/devlela/sistema-agendamentos-flask" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 4 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=API+com+FastAPI" alt="Imagem do projeto API com FastAPI" />
+        <div class="card-content">
+          <h3>API com FastAPI</h3>
+          <p>API simples para operações matemáticas usando FastAPI.</p>
+          <a href="https://github.com/devlela/api-fastapi-basica" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 5 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Jogo+em+Python" alt="Imagem do projeto Jogo em Python" />
+        <div class="card-content">
+          <h3>Jogo em Python</h3>
+          <p>Jogo de adivinhação de números em Python.</p>
+          <a href="https://github.com/devlela/jogo-adivinhacao-python" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 6 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Conversor+de+Moeda" alt="Imagem do projeto Conversor de Moeda" />
+        <div class="card-content">
+          <h3>Conversor de Moeda</h3>
+          <p>Conversor de reais para dólar em Python.</p>
+          <a href="https://github.com/devlela/conversor-moeda-python" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 7 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Clone+de+Interface" alt="Imagem do projeto Clone de Interface" />
+        <div class="card-content">
+          <h3>Clone de Interface</h3>
+          <p>Clone simplificado da interface do Spotify usando HTML e CSS.</p>
+          <a href="https://github.com/devlela/sportfy-clone-interface" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 8 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Webscraper+com+BeautifulSoup" alt="Imagem do projeto Webscraper com BeautifulSoup" />
+        <div class="card-content">
+          <h3>Webscraper com BeautifulSoup</h3>
+          <p>Script para extração de dados de livros usando BeautifulSoup.</p>
+          <a href="https://github.com/devlela/webscraper-books-python" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 9 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Cadastro+com+SQLite" alt="Imagem do projeto Cadastro com SQLite" />
+        <div class="card-content">
+          <h3>Cadastro com SQLite</h3>
+          <p>Aplicação para cadastro de usuários usando SQLite.</p>
+          <a href="https://github.com/devlela/cadastro-sqlite-python" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
+      <!-- Projeto 10 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x180?text=Site+Portfólio+Pessoal" alt="Imagem do projeto Site Portfólio Pessoal" />
+        <div class="card-content">
+          <h3>Site Portfólio Pessoal</h3>
+          <p>Site pessoal para exibir informações e projetos.</p>
+          <a href="https://github.com/devlela/portfolio-pessoal-wesley" target="_blank" class="btn">Ver no GitHub</a>
+        </div>
+      </div>
     </div>
   </section>  
   <section id="contato">
