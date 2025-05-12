@@ -5,35 +5,28 @@ const assets = [
   '/style.css',
   '/script.js',
   '/manifest.json',
-  '/favicon.ico',
-  // Adicione outros recursos, como imagens e ícones, se necessário
+  '/favicon.ico'
+  // Adicione outros recursos aqui se necessário
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(cacheName)
-      .then(cache => {
-        return cache.addAll(assets);
-      })
+    caches.open(cacheName).then(cache => cache.addAll(assets))
   );
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys.map(key => {
-        if (key !== cacheName) {
-          return caches.delete(key);
-        }
-      }));
-    })
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (key !== cacheName) return caches.delete(key);
+      })
+    ))
   );
 });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      return cachedResponse || fetch(event.request);
-    })
+    caches.match(event.request).then(cachedResponse => cachedResponse || fetch(event.request))
   );
 });
