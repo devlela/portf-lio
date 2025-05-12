@@ -199,12 +199,20 @@ footer {
   outline-offset: 2px;
 }
 
+/* Atualização na exibição da foto - novo formato retangular com cantos suavemente arredondados */
 .minha-foto {
   width: 150px;
   height: auto;
-  border-radius: 50%;
+  border-radius: 10px;             /* Cantos suavemente arredondados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil para profundidade */
   display: block;
   margin: 0 auto 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.minha-foto:hover {
+  transform: scale(1.05);          /* Leve aumento no hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Sombra um pouco mais intensa ao passar o mouse */
 }
 
 /* Formulário de Contato */
