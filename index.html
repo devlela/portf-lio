@@ -3,12 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Meta Description e SEO -->
   <meta name="description" content="Portfólio de Wesley Cavalcante Santos, desenvolvedor front-end e estudante de Análise e Desenvolvimento de Sistemas." />
   <meta name="author" content="Wesley Cavalcante Santos" />
   <meta name="keywords" content="portfólio, desenvolvedor front-end, Wesley Cavalcante Santos, projetos" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Lela | Portfólio" />
+  <meta property="og:description" content="Portfólio de Wesley Cavalcante Santos, desenvolvedor front-end e estudante de Análise e Desenvolvimento de Sistemas." />
+  <meta property="og:image" content="minha-foto.jpg" />
+  <meta property="og:url" content="https://seu-dominio.com" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
   <title>Lela | Portfólio</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Link para o Manifest (PWA) -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS do Projeto -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,120 +39,94 @@
     <nav>
       <a href="#sobre" aria-label="Ir para a seção Sobre">Sobre</a>
       <a href="#projetos" aria-label="Ir para a seção Projetos">Projetos</a>
+      <a href="#repos" aria-label="Ir para a seção Repositórios">Repositórios</a>
       <a href="#contato" aria-label="Ir para a seção Contato">Contato</a>
     </nav>
-  </header>  
-  <section id="sobre">
-    <h2>Sobre mim</h2>
-    <img src="minha-foto.jpg" alt="Foto de Wesley Cavalcante Santos" class="minha-foto" />
-    <p>Olá! Sou Wesley Cavalcante Santos, conhecido como Lela. Estudo Análise e Desenvolvimento de Sistemas na UNINOVE (conclusão em 2026). Sou apaixonado por tecnologia e programação, e meu portfólio reflete projetos relevantes para o mercado.</p>
-  </section>  
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <div class="projects">
-      <!-- Projeto 1 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=To-do+List+com+Flask" alt="Imagem do projeto To-do List com Flask" />
-        <div class="card-content">
-          <h3>To-do List com Flask</h3>
-          <p>Aplicação para gerenciar tarefas usando Flask.</p>
-          <a href="https://github.com/devlela/todo-list-flask" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
+    <!-- Botão para alternar o tema -->
+    <button id="theme-toggle" aria-label="Alternar tema">Tema Claro</button>
+  </header>
+  
+  <main>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="fade-in" data-aos="fade-up">
+      <h2>Sobre mim</h2>
+      <img src="minha-foto.jpg" alt="Foto de Wesley Cavalcante Santos" class="minha-foto" loading="lazy" />
+      <p>Olá! Sou Wesley Cavalcante Santos, conhecido como Lela. Estudo Análise e Desenvolvimento de Sistemas na UNINOVE (conclusão em 2026). Sou apaixonado por tecnologia e programação, e meu portfólio reflete projetos relevantes para o mercado.</p>
+    </section>
+    
+    <!-- Seção Projetos com filtro -->
+    <section id="projetos" class="fade-in" data-aos="fade-up">
+      <h2>Projetos</h2>
+      <!-- Input para filtrar projetos -->
+      <input type="text" id="project-search" placeholder="Pesquisar projetos..." aria-label="Pesquisar projetos" />
+      <div class="projects">
+        <!-- Exemplo de card com dados para modal -->
+        <article class="card" 
+                 data-title="To-do List com Flask" 
+                 data-description="Projeto que implementa uma aplicação de lista de tarefas utilizando Flask, com funcionalidades para adicionar, editar e remover tarefas de forma dinâmica." 
+                 data-url="https://github.com/devlela/todo-list-flask">
+          <img src="https://via.placeholder.com/400x180?text=To-do+List+com+Flask" alt="Imagem do projeto To-do List com Flask" loading="lazy" />
+          <div class="card-content">
+            <h3>To-do List com Flask</h3>
+            <p>Aplicação para gerenciar tarefas usando Flask.</p>
+            <button class="btn" data-url="https://github.com/devlela/todo-list-flask">Ver no GitHub</button>
+            <button class="more-details-btn" aria-label="Mais detalhes">Mais Detalhes</button>
+          </div>
+        </article>
+        <!-- Repita outros cards conforme necessário -->
       </div>
-      <!-- Projeto 2 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Dashboard+com+Dash" alt="Imagem do projeto Dashboard com Dash" />
-        <div class="card-content">
-          <h3>Dashboard com Dash</h3>
-          <p>Dashboard interativo para análise de dados com Dash e Plotly.</p>
-          <a href="https://github.com/devlela/dashboard-analise-dados" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
+    </section>
+    
+    <!-- Seção Repositórios com filtro -->
+    <section id="repos" class="fade-in" data-aos="fade-up">
+      <h2>Repositórios Recentes</h2>
+      <!-- Input para filtrar repositórios -->
+      <input type="text" id="repo-search" placeholder="Pesquisar repositórios..." aria-label="Pesquisar repositórios" />
+      <div id="repo-container"></div>
+    </section>
+    
+    <!-- Seção Contato com Formulário -->
+    <section id="contato" class="fade-in" data-aos="fade-up">
+      <h2>Contato</h2>
+      <p>Entre em contato comigo:</p>
+      <div class="contact">
+        <a href="mailto:wesley.santos2422@gmail.com">Email</a>
+        <a href="tel:+5511983964278">Telefone</a>
+        <a href="https://github.com/devlela" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-      <!-- Projeto 3 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Site+de+Agendamentos" alt="Imagem do projeto Site de Agendamentos" />
-        <div class="card-content">
-          <h3>Site de Agendamentos</h3>
-          <p>Aplicação para gerenciar agendamentos usando Flask.</p>
-          <a href="https://github.com/devlela/sistema-agendamentos-flask" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 4 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=API+com+FastAPI" alt="Imagem do projeto API com FastAPI" />
-        <div class="card-content">
-          <h3>API com FastAPI</h3>
-          <p>API simples para operações matemáticas usando FastAPI.</p>
-          <a href="https://github.com/devlela/api-fastapi-basica" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 5 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Jogo+em+Python" alt="Imagem do projeto Jogo em Python" />
-        <div class="card-content">
-          <h3>Jogo em Python</h3>
-          <p>Jogo de adivinhação de números em Python.</p>
-          <a href="https://github.com/devlela/jogo-adivinhacao-python" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 6 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Conversor+de+Moeda" alt="Imagem do projeto Conversor de Moeda" />
-        <div class="card-content">
-          <h3>Conversor de Moeda</h3>
-          <p>Conversor de reais para dólar em Python.</p>
-          <a href="https://github.com/devlela/conversor-moeda-python" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 7 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Clone+de+Interface" alt="Imagem do projeto Clone de Interface" />
-        <div class="card-content">
-          <h3>Clone de Interface</h3>
-          <p>Clone simplificado da interface do Spotify usando HTML e CSS.</p>
-          <a href="https://github.com/devlela/sportfy-clone-interface" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 8 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Webscraper+com+BeautifulSoup" alt="Imagem do projeto Webscraper com BeautifulSoup" />
-        <div class="card-content">
-          <h3>Webscraper com BeautifulSoup</h3>
-          <p>Script para extração de dados de livros usando BeautifulSoup.</p>
-          <a href="https://github.com/devlela/webscraper-books-python" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 9 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Cadastro+com+SQLite" alt="Imagem do projeto Cadastro com SQLite" />
-        <div class="card-content">
-          <h3>Cadastro com SQLite</h3>
-          <p>Aplicação para cadastro de usuários usando SQLite.</p>
-          <a href="https://github.com/devlela/cadastro-sqlite-python" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-      <!-- Projeto 10 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x180?text=Site+Portfólio+Pessoal" alt="Imagem do projeto Site Portfólio Pessoal" />
-        <div class="card-content">
-          <h3>Site Portfólio Pessoal</h3>
-          <p>Site pessoal para exibir informações e projetos.</p>
-          <a href="https://github.com/devlela/portfolio-pessoal-wesley" target="_blank" class="btn">Ver no GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>  
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Entre em contato comigo:</p>
-    <div class="contact">
-      <a href="mailto:wesley.santos2422@gmail.com">Email</a>
-      <a href="tel:+5511983964278">Telefone</a>
-      <a href="https://github.com/devlela" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
-  </section>  
+      <!-- Formulário de Contato Dinâmico -->
+      <form id="contact-form">
+        <input type="text" id="contact-name" placeholder="Seu nome" required />
+        <input type="email" id="contact-email" placeholder="Seu e-mail" required />
+        <textarea id="contact-message" rows="4" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+  
   <footer>
     <p>&copy; 2025 Lela. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Botão "Voltar ao Topo" -->
+  <button id="back-to-top" aria-label="Voltar ao topo">&#8679;</button>
+
+  <!-- Estrutura do Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" aria-label="Fechar modal">&times;</span>
+      <h2 class="modal-title"></h2>
+      <p class="modal-description"></p>
+      <button id="modal-github" class="modal-btn" aria-label="Ver no GitHub">Ver no GitHub</button>
+    </div>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Script do Projeto -->
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
