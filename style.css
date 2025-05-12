@@ -64,15 +64,6 @@ header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Remover o cabeçalho sticky e ajustar o padding em dispositivos móveis */
-@media (max-width: 768px) {
-  header {
-    position: static; /* O cabeçalho rola junto com o conteúdo */
-    padding: 1rem;
-    box-shadow: none; /* Remove a sombra para um visual mais clean */
-  }
-}
-
 header h1 {
   font-size: 2.5rem;
   color: var(--highlight-color);
@@ -121,4 +112,306 @@ section {
 /* Estilo para os inputs de busca */
 input[type="text"] {
   width: 100%;
-  padding: 0.5rem
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Seção de Projetos */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--highlight-color);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  color: var(--highlight-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-content .btn,
+.card-content .more-details-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--highlight-color);
+  color: var(--foreground-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.card-content .btn:hover,
+.card-content .btn:focus,
+.card-content .more-details-btn:hover,
+.card-content .more-details-btn:focus {
+  background-color: var(--highlight-dark-color);
+  outline: 2px solid var(--highlight-dark-color);
+  outline-offset: 2px;
+}
+
+/* Footer aprimorado */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--footer-color);
+}
+
+.contact a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.contact a:hover,
+.contact a:focus {
+  text-decoration: underline;
+  outline: 2px solid var(--highlight-color);
+  outline-offset: 2px;
+}
+
+/* Atualização na exibição da foto - novo formato retangular com cantos suavemente arredondados */
+.minha-foto {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.minha-foto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Formulário de Contato */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: var(--background-color);
+  color: var(--foreground-color);
+}
+
+#contact-form button {
+  padding: 0.75rem;
+  background-color: var(--highlight-color);
+  color: var(--foreground-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover,
+#contact-form button:focus {
+  background-color: var(--highlight-dark-color);
+  outline: 2px solid var(--highlight-dark-color);
+  outline-offset: 2px;
+}
+
+/* Botão "Voltar ao Topo" */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--highlight-color);
+  color: var(--foreground-color);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#back-to-top:hover,
+#back-to-top:focus {
+  background-color: var(--highlight-dark-color);
+  outline: 2px solid var(--highlight-dark-color);
+  outline-offset: 2px;
+}
+
+/* Seção de Repositórios */
+#repo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.repo-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.repo-card:hover {
+  transform: scale(1.02);
+}
+
+.repo-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--highlight-color);
+}
+
+.repo-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--background-color);
+  color: var(--foreground-color);
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--highlight-dark-color);
+}
+
+@media (max-width: 768px) {
+  .projects, #repo-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 2px solid var(--highlight-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  border: 2px solid var(--background-color);
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: var(--foreground-color);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  color: var(--highlight-color);
+  font-size: 1.1rem;
+}
+
+.timeline-content p {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+}
