@@ -25,12 +25,12 @@ html {
   --footer-color: #666666;
 }
 
-/* Transições globais para cor de fundo e de texto */
+/* Fundo com gradiente para dar profundidade */
 body {
-  background-color: var(--background-color);
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
   color: var(--foreground-color);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Efeito para elementos que aparecerão com scroll */
@@ -52,7 +52,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Header sticky */
+/* Header aprimorado */
 header {
   padding: 2rem;
   text-align: center;
@@ -60,25 +60,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-/* Botão para alternar tema */
-#theme-toggle {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--highlight-color);
-  color: var(--foreground-color);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#theme-toggle:hover,
-#theme-toggle:focus {
-  background-color: var(--highlight-dark-color);
-  outline: 2px solid var(--highlight-dark-color);
-  outline-offset: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 header h1 {
@@ -98,6 +81,25 @@ nav a:hover,
 nav a:focus {
   color: var(--highlight-color);
   outline: 2px solid var(--highlight-color);
+  outline-offset: 2px;
+}
+
+/* Botão para alternar tema */
+#theme-toggle {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--highlight-color);
+  color: var(--foreground-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  background-color: var(--highlight-dark-color);
+  outline: 2px solid var(--highlight-dark-color);
   outline-offset: 2px;
 }
 
@@ -128,7 +130,7 @@ input[type="text"] {
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -177,6 +179,7 @@ input[type="text"] {
   outline-offset: 2px;
 }
 
+/* Footer aprimorado */
 footer {
   text-align: center;
   padding: 2rem;
@@ -203,16 +206,16 @@ footer {
 .minha-foto {
   width: 150px;
   height: auto;
-  border-radius: 10px;             /* Cantos suavemente arredondados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil para profundidade */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   display: block;
   margin: 0 auto 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .minha-foto:hover {
-  transform: scale(1.05);          /* Leve aumento no hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Sombra um pouco mais intensa ao passar o mouse */
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Formulário de Contato */
